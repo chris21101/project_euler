@@ -1,5 +1,5 @@
 // euler_math_test project euler_math_test.go
-package euler_math
+package el_math
 
 import (
 	"testing"

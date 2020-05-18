@@ -1,4 +1,4 @@
-package euler_math
+package el_math
 
 import (
 	"fmt"

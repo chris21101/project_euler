@@ -3,7 +3,7 @@ package euler_utl
 import (
 	"fmt"
 
-	"project_euler/euler_utl/euler_math"
+	"project_euler/euler_utl/el_math"
 
 	"project_euler/logging"
 )
@@ -24,12 +24,12 @@ The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.`
 
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	sum3 := euler_math.Sumdivisibleby(3, 999, l)
-	sum5 := euler_math.Sumdivisibleby(5, 999, l)
+	sum3 := el_math.Sumdivisibleby(3, 999, l)
+	sum5 := el_math.Sumdivisibleby(5, 999, l)
 	// 15 is the first number that is a multiple of 3 and 5.
 	// The sum of multiples of 15 must therefore be subtracted from the sum of 3 and 5
 	// Otherwise they would count twice
-	sum15 := euler_math.Sumdivisibleby(15, 999, l)
+	sum15 := el_math.Sumdivisibleby(15, 999, l)
 	result := sum3 + sum5 - sum15
 	l.Log(logging.Info, fmt.Sprintf("%s %d and % d lower %d = %d", "Sum of multiples from ", 3, 5, 1000, result))
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
