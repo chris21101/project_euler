@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"project_euler/euler_utl"
+	"project_euler/euler_utl/el_localize"
 	"project_euler/euler_utl/el_output"
 	"project_euler/logging"
 )
@@ -20,8 +21,10 @@ func main() {
 
 	argsWithProg := os.Args
 
-	numbPtr := flag.Int("problemnum", 1, "Number of the Eulerprojectproblem")
+	numbPtr := flag.Int("problemnum", max_problem_num, "Number of the Eulerprojectproblem")
 	wordPtr := flag.String("loglevel", logging.DefaultLevel, "Set loglevel [DEBUG, INFO, WARNING, ERROR]")
+	langPtr := flag.String("lang", "en", "Set language en|de")
+
 	versionPtr := flag.Bool("version", false, "Print version and exit the program")
 	flag.Parse()
 
@@ -40,15 +43,21 @@ func main() {
 	cmdwithargs := strings.Join(argsWithProg, " ")
 	logger.Log(logging.Debug, "Start : "+cmdwithargs)
 	logger.Log(logging.Debug, fmt.Sprintf("Project %s %s", project_name, version))
-	logger.Log(logging.Info, fmt.Sprintf("Max implemented problem number is %d", max_problem_num))
+
+	localizer, err := el_localize.New(*numbPtr, *langPtr)
+
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 
 	switch *numbPtr {
 	case 1:
-		result, problem_text, _ := euler_utl.P1(logger)
-		el_output.Print_txt_result(1, uint64(result), problem_text)
+		result, _ := euler_utl.P1(logger)
+		el_output.Print_Loc_Text(localizer, *numbPtr, result)
 	case 2:
-		result, problem_text, _ := euler_utl.P2(logger)
-		el_output.Print_txt_result(2, result, problem_text)
+		result, _ := euler_utl.P2(logger)
+		el_output.Print_Loc_Text(localizer, *numbPtr, result)
 	default:
 		logger.Log(logging.Error, fmt.Sprintf("%s %d %s", "Problem ", *numbPtr, " not yet implemented"))
 		logger.Log(logging.Error, fmt.Sprintf("Max implemented problem number is %d", max_problem_num))

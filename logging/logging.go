@@ -3,8 +3,6 @@ package logging
 import (
 	"errors"
 	"fmt"
-
-	//"strconv"
 	"strings"
 	"time"
 )
