@@ -13,9 +13,9 @@ import (
 	"project_euler/logging"
 )
 
-const version string = "v0.1.2"
+const version string = "v0.1.3"
 const project_name = "EulerGo"
-const max_problem_num = 2
+const max_problem_num = 3
 
 func main() {
 
