@@ -56,9 +56,11 @@ find the sum of the even-valued terms.`
 	term_1 := 1.0
 	term_2 := 1.0
 	result := 0.0
+	// First fibonacci Number 1
+	l.Log(logging.Info, fmt.Sprintf("Fibonacci Num: %d", 1))
 	for next_fib < max_value {
 		next_fib = term_1 + term_2
-		l.Log(logging.Debug, fmt.Sprintf("Next Fib: %d", uint64(next_fib)))
+		l.Log(logging.Info, fmt.Sprintf("Fibonacci Num: %d", uint64(next_fib)))
 		if math.Mod(float64(next_fib), float64(2)) == 0 {
 			l.Log(logging.Debug, fmt.Sprintf("even-term: %d +%d = %d", uint(next_fib), uint(result), uint(result+next_fib)))
 			result = result + next_fib

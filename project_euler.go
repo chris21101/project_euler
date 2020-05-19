@@ -4,33 +4,17 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"path"
 	"strings"
 	"time"
 
 	"project_euler/euler_utl"
+	"project_euler/euler_utl/el_output"
 	"project_euler/logging"
 )
 
-const version string = "v0.0.2"
+const version string = "v0.1.2"
 const project_name = "EulerGo"
 const max_problem_num = 2
-
-func print_result(pnum int, result uint64, text string) {
-	fmt.Println(":-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) \n")
-	fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-	fmt.Printf("ProjectEuler.net Problem %d\n\n", pnum)
-	fmt.Println(text)
-	fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-	fmt.Printf("%s %d is %d %s", "\nResult of the problem", pnum, result, "\n")
-	fmt.Println("\n:-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) :-) ")
-}
-
-func print_version(name string) {
-	fmt.Printf("Program: %s Version: %s \n", path.Base(name), version)
-	//fmt.Printf(" %s\n", version)
-	fmt.Printf("Max implemented problem number is %d\n", max_problem_num)
-}
 
 func main() {
 
@@ -42,7 +26,7 @@ func main() {
 	flag.Parse()
 
 	if *versionPtr {
-		print_version(argsWithProg[0])
+		el_output.Print_txt_version(version, max_problem_num, argsWithProg[0])
 		os.Exit(0)
 	}
 
@@ -61,10 +45,10 @@ func main() {
 	switch *numbPtr {
 	case 1:
 		result, problem_text, _ := euler_utl.P1(logger)
-		print_result(1, uint64(result), problem_text)
+		el_output.Print_txt_result(1, uint64(result), problem_text)
 	case 2:
 		result, problem_text, _ := euler_utl.P2(logger)
-		print_result(2, result, problem_text)
+		el_output.Print_txt_result(2, result, problem_text)
 	default:
 		logger.Log(logging.Error, fmt.Sprintf("%s %d %s", "Problem ", *numbPtr, " not yet implemented"))
 		logger.Log(logging.Error, fmt.Sprintf("Max implemented problem number is %d", max_problem_num))
