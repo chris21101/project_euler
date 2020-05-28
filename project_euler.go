@@ -58,6 +58,9 @@ func main() {
 	case 2:
 		result, _ := euler_utl.P2(logger)
 		el_output.Print_Loc_Text(localizer, *numbPtr, result)
+	case 3:
+		result, _ := euler_utl.P3(logger)
+		el_output.Print_Loc_Text(localizer, *numbPtr, result)
 	default:
 		logger.Log(logging.Error, fmt.Sprintf("%s %d %s", "Problem ", *numbPtr, " not yet implemented"))
 		logger.Log(logging.Error, fmt.Sprintf("Max implemented problem number is %d", max_problem_num))

@@ -68,6 +68,13 @@ Wenn man mit 1 und 2 beginnt, sind die ersten 10 Terme wie folgt:
 
 Finden Sie die Summe aller geraden Terme der Fibonacci-Reihe, die 4 Millionen nicht überschreiten.`
 
+	//----------------------------- Problem 3 -------------------------------------------------------------------------------------------
+	map_of_text["3_EN"] = `The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?`
+	map_of_text["3_DE"] = `Die Primfaktoren von 13195 sind 5, 7, 13 und 29.
+
+Was ist der größte Primfaktor der Zahl 600851475143?`
 	//----------------------------- Result Line -------------------------------------------------------------------------------------------
 	map_of_text["R_EN"] = "Result of the problem %d is %d"
 	map_of_text["R_DE"] = "Ergebnis des Problems %d ist %d"
