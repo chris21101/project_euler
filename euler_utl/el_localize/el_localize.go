@@ -75,6 +75,17 @@ What is the largest prime factor of the number 600851475143 ?`
 	map_of_text["3_DE"] = `Die Primfaktoren von 13195 sind 5, 7, 13 und 29.
 
 Was ist der größte Primfaktor der Zahl 600851475143?`
+
+	//----------------------------- Problem 4 -------------------------------------------------------------------------------------------
+	map_of_text["4_EN"] = `A palindromic number reads the same both ways. 
+The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.`
+	map_of_text["4_DE"] = `Eine Palindromzahl liest sich rückwärts so wie vorwärts. 
+Das größte Palindrom, das ein Produkt von 2 zweistelligen Zahlen ist, ist 9009 = 91 × 99.
+
+Finden Sie das größte Palindrom, das das Produkt von 2 dreistelligen Zahlen ist.`
+
 	//----------------------------- Result Line -------------------------------------------------------------------------------------------
 	map_of_text["R_EN"] = "Result of the problem %d is %d"
 	map_of_text["R_DE"] = "Ergebnis des Problems %d ist %d"

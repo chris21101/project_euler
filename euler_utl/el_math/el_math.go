@@ -54,36 +54,9 @@ func Is_Prime_Number(num float64) bool {
 	return false
 }
 
-/*
-   FUNCTION prime_factorization_array(
-       p_num IN   NUMBER
-   )RETURN t_number_ar AS
-
-       v_list         t_number_ar;
-       v_start_prim   NUMBER := 2;
-       v_index        INTEGER := 0;
-       v_kgt          NUMBER := 0;
-       v_rest         NUMBER := 0;
-   BEGIN
-       v_rest := p_num;
-       LOOP
-           v_kgt := kgt(v_rest);
-
-           -- v_rest is Prim Number
-           IF v_kgt = 1 THEN
-               v_list(v_index):= v_rest;
-               RETURN v_list;
-           ELSE
-               v_list(v_index):= v_kgt;
-               v_rest := v_rest / v_kgt;
-           END IF;
-
-           v_index := v_index + 1;
-       END LOOP;
-
-       RETURN v_list;
-   END prime_factorization_array;
-*/
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//func Prime_Factorization: Get a slice with the prime factores
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 func Prime_Factorization(num float64) []float64 {
 	rest := num
 	v_kgt := float64(0)
@@ -101,4 +74,25 @@ func Prime_Factorization(num float64) []float64 {
 	}
 
 	return facts
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//func Get_Reverse_Numn: Get the reverse number 1234=> 4321q
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+func Get_Reverse_Num(num float64) float64 {
+	var (
+		n       float64 = 0.0
+		reverse float64 = 0.0
+	)
+
+	for n = num; n > 0; {
+		reverse = 10.0*reverse + math.Mod(n, 10.0)
+		n = math.Floor(n / 10)
+	}
+
+	return reverse
+}
+
+func Is_Palindrom(num float64) bool {
+	return num == Get_Reverse_Num(num)
 }

@@ -78,11 +78,11 @@ func P2(l *logging.Logger) (uint64, error) {
 //What is the largest prime factor of the number 600851475143 ?
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 func P3(l *logging.Logger) (uint64, error) {
-	var next_num_str string
 	pnum := 3
 	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
 
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	var next_num_str string
 	result_str := "NULL"
 
 	results := el_math.Prime_Factorization(600851475143)
@@ -96,6 +96,37 @@ func P3(l *logging.Logger) (uint64, error) {
 	}
 	l.Log(logging.Info, fmt.Sprintf("Prime_Factorization: %d = %s", 600851475143, result_str))
 	result := results[len(results)-1]
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
+
+func P4(l *logging.Logger) (uint64, error) {
+	pnum := 4
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	var (
+		max_palindrom float64 = 0
+		a             float64 = 0
+		b             float64 = 0
+	)
+
+	for a = 999; a >= 600; {
+
+		for b = 999; b >= a; {
+			if el_math.Is_Palindrom(a * b) {
+				l.Log(logging.Debug, fmt.Sprintf("New Palindrom: %0.f * %.0f = %.0f", a, b, a*b))
+				if (a * b) > max_palindrom {
+					max_palindrom = a * b
+					l.Log(logging.Info, fmt.Sprintf("New highest Palindrom: %0.f * %.0f = %.0f", a, b, max_palindrom))
+				}
+			}
+			b = b - 1
+		}
+
+		a = a - 1
+	}
+	result := max_palindrom
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	return uint64(result), nil

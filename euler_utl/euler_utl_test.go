@@ -33,3 +33,12 @@ func TestP3(t *testing.T) {
 		t.Errorf("ERROR: Result of the problem 3 should be %d and not %d ", uint64(p1_result), uint64(result))
 	}
 }
+
+func TestP4(t *testing.T) {
+	logger, _ := logging.New(time.RFC3339, logging.DefaultLevel)
+	result, _ := P4(logger)
+	p1_result := 906609
+	if uint64(result) != uint64(p1_result) {
+		t.Errorf("ERROR: Result of the problem 4 should be %d and not %d ", uint64(p1_result), uint64(result))
+	}
+}

@@ -144,3 +144,26 @@ func TestPrime_Factorization(t *testing.T) {
 		t.Errorf("Error: euler_math.Prime_Factorization(%.0f) = %s and not %s", test_num, test_string, result_str)
 	}
 }
+
+func TestGet_Reverse_Num(t *testing.T) {
+	test_num := 123456789.0
+	result := Get_Reverse_Num(test_num)
+
+	if result != 987654321.0 {
+		t.Errorf("Error: euler_math.Get_Reverse_Num(%.0f) = %.0f and not %0.f", test_num, 987654321.0, result)
+	}
+
+	test_num = 4567.0
+	result = Get_Reverse_Num(test_num)
+
+	if result != 7654.0 {
+		t.Errorf("Error: euler_math.Get_Reverse_Num(%.0f) = %.0f and not %0.f", test_num, 7654.0, result)
+	}
+
+}
+
+func TestIs_Pallindrom(t *testing.T) {
+	if !Is_Palindrom(9009.0) {
+		t.Errorf("Error: euler_math.Is_Palindrom(9009) is a pallindrom")
+	}
+}
