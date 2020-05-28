@@ -71,3 +71,32 @@ func P2(l *logging.Logger) (uint64, error) {
 
 	return uint64(result), nil
 }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//The prime factors of 13195 are 5, 7, 13 and 29.
+//
+//What is the largest prime factor of the number 600851475143 ?
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+func P3(l *logging.Logger) (uint64, error) {
+	var next_num_str string
+	pnum := 3
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	result_str := "NULL"
+
+	results := el_math.Prime_Factorization(600851475143)
+	for i := 0; i < len(results); i++ {
+		next_num_str = fmt.Sprintf("%.0f", results[i])
+		if result_str == "NULL" {
+			result_str = next_num_str
+		} else {
+			result_str = result_str + "*" + next_num_str
+		}
+	}
+	l.Log(logging.Info, fmt.Sprintf("Prime_Factorization: %d = %s", 600851475143, result_str))
+	result := results[len(results)-1]
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
