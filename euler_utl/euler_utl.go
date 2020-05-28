@@ -91,10 +91,10 @@ func P3(l *logging.Logger) (uint64, error) {
 		if result_str == "NULL" {
 			result_str = next_num_str
 		} else {
-			result_str = result_str + "," + next_num_str
+			result_str = result_str + "*" + next_num_str
 		}
 	}
-	l.Log(logging.Info, fmt.Sprintf("Facts: %s", result_str))
+	l.Log(logging.Info, fmt.Sprintf("Prime_Factorization: %d = %s", 600851475143, result_str))
 	result := results[len(results)-1]
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
