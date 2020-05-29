@@ -85,7 +85,13 @@ Find the largest palindrome made from the product of two 3-digit numbers.`
 Das größte Palindrom, das ein Produkt von 2 zweistelligen Zahlen ist, ist 9009 = 91 × 99.
 
 Finden Sie das größte Palindrom, das das Produkt von 2 dreistelligen Zahlen ist.`
+	//----------------------------- Problem 5 -------------------------------------------------------------------------------------------
+	map_of_text["5_EN"] = `2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?`
+	map_of_text["5_DE"] = `2520 ist die kleinste Zahl, die ohne Rest durch jede Zahl von 1 bis 10 teilbar ist.
+
+Was ist die kleinste positive Zahl, die durch alle Zahlen von 1 bis 20 glatt teilbar ist?`
 	//----------------------------- Result Line -------------------------------------------------------------------------------------------
 	map_of_text["R_EN"] = "Result of the problem %d is %d"
 	map_of_text["R_DE"] = "Ergebnis des Problems %d ist %d"

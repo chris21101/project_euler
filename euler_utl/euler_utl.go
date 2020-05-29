@@ -111,7 +111,7 @@ func P4(l *logging.Logger) (uint64, error) {
 		b             float64 = 0
 	)
 
-	for a = 999; a >= 600; {
+	for a = 999; a >= 100; {
 
 		for b = 999; b >= a; {
 			if el_math.Is_Palindrom(a * b) {
@@ -127,6 +127,24 @@ func P4(l *logging.Logger) (uint64, error) {
 		a = a - 1
 	}
 	result := max_palindrom
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
+
+func P5(l *logging.Logger) (uint64, error) {
+	pnum := 5
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	result := 0.0
+
+	for i := 20.0; ; i = i + 20.0 {
+		if math.Mod(i, 20.0) == 0 && math.Mod(i, 19.0) == 0 && math.Mod(i, 18.0) == 0 && math.Mod(i, 17.0) == 0 && math.Mod(i, 16.0) == 0 && math.Mod(i, 15.0) == 0 && math.Mod(i, 14.0) == 0 && math.Mod(i, 13.0) == 0 && math.Mod(i, 12.0) == 0 && math.Mod(i, 11.0) == 0 && math.Mod(i, 10.0) == 0 && math.Mod(i, 9.0) == 0 && math.Mod(i, 8.0) == 0 && math.Mod(i, 7.0) == 0 && math.Mod(i, 6.0) == 0 && math.Mod(i, 5.0) == 0 && math.Mod(i, 4.0) == 0 && math.Mod(i, 3.0) == 0 && math.Mod(i, 2.0) == 0 && math.Mod(i, 1.0) == 0 {
+			result = i
+			return uint64(i), nil
+		}
+	}
+
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	return uint64(result), nil
