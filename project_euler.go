@@ -13,7 +13,7 @@ import (
 	"project_euler/logging"
 )
 
-const version string = "v0.1.5"
+const version string = "v0.1.5.1"
 const project_name = "EulerGo"
 const max_problem_num = 5
 

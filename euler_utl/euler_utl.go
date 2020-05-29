@@ -132,19 +132,40 @@ func P4(l *logging.Logger) (uint64, error) {
 	return uint64(result), nil
 }
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+//
+// What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+// Solution from the ProjectEuler blog/pdf
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 func P5(l *logging.Logger) (uint64, error) {
 	pnum := 5
 	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	result := 0.0
+	N := float64(1.0)
+	k := float64(20.0)
+	check := true
+	limit := math.Sqrt(k)
+	nr := float64(0)
+	var a [9]float64
 
-	for i := 20.0; ; i = i + 20.0 {
-		if math.Mod(i, 20.0) == 0 && math.Mod(i, 19.0) == 0 && math.Mod(i, 18.0) == 0 && math.Mod(i, 17.0) == 0 && math.Mod(i, 16.0) == 0 && math.Mod(i, 15.0) == 0 && math.Mod(i, 14.0) == 0 && math.Mod(i, 13.0) == 0 && math.Mod(i, 12.0) == 0 && math.Mod(i, 11.0) == 0 && math.Mod(i, 10.0) == 0 && math.Mod(i, 9.0) == 0 && math.Mod(i, 8.0) == 0 && math.Mod(i, 7.0) == 0 && math.Mod(i, 6.0) == 0 && math.Mod(i, 5.0) == 0 && math.Mod(i, 4.0) == 0 && math.Mod(i, 3.0) == 0 && math.Mod(i, 2.0) == 0 && math.Mod(i, 1.0) == 0 {
-			result = i
-			return uint64(i), nil
+	//List of primes
+	p := [9]float64{2, 3, 5, 7, 11, 13, 17, 19, 23}
+
+	for i := 0; p[i] <= k; i++ {
+		a[i] = 1
+		if check {
+			if p[i] <= limit {
+				a[i] = math.Floor(math.Log(float64(k)) / math.Log(float64(p[i])))
+			} else {
+				check = false
+			}
 		}
+		nr = N * math.Pow(float64(p[i]), float64(a[i]))
+		l.Log(logging.Info, fmt.Sprintf("%.0f = %.0f * %.0f ^ %.0f", nr, N, p[i], a[i]))
+		N = nr
 	}
-
+	result := N
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	return uint64(result), nil
