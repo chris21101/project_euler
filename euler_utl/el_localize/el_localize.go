@@ -92,6 +92,27 @@ What is the smallest positive number that is evenly divisible by all of the numb
 	map_of_text["5_DE"] = `2520 ist die kleinste Zahl, die ohne Rest durch jede Zahl von 1 bis 10 teilbar ist.
 
 Was ist die kleinste positive Zahl, die durch alle Zahlen von 1 bis 20 glatt teilbar ist?`
+	//----------------------------- Problem 6 -------------------------------------------------------------------------------------------
+	map_of_text["6_EN"] = `The sum of the squares of the first ten natural numbers is,
+
+1^2+2^2+...+10^2=385
+The square of the sum of the first ten natural numbers is,
+
+(1+2+...+10)^2=55^2=3025
+Hence the difference between the sum of the squares of the first ten natural numbers 
+and the square of the sum is 3025−385=2640.
+
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.`
+	map_of_text["6_DE"] = `Die Summe der Quadrate der ersten 10 natürlichen Zahlen ist
+
+1^2 + 2^2 + ... + 10^2 = 385
+Das Quadrat der Summe der ersten 10 natürlichen Zahlen ist
+
+(1 + 2 + ... + 10)^2 = 55^2 = 3025
+Somit ist die Differenz aus der Summe der Quadrate der ersten zehn natürlichen Zahlen 
+und dem Quadrat der Summe 3025 - 385 = 2640.
+
+Finden Sie die Differenz aus der Summe der Quadrate der ersten einhundert natürlichen Zahlen und dem Quadrat der Summe.`
 	//----------------------------- Result Line -------------------------------------------------------------------------------------------
 	map_of_text["R_EN"] = "Result of the problem %d is %d"
 	map_of_text["R_DE"] = "Ergebnis des Problems %d ist %d"

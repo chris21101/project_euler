@@ -170,3 +170,33 @@ func P5(l *logging.Logger) (uint64, error) {
 
 	return uint64(result), nil
 }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//The sum of the squares of the first ten natural numbers is,
+//
+//1^2+2^2+...+10^2=385
+//The square of the sum of the first ten natural numbers is,
+//
+//(1+2+...+10)^2=55^2=3025
+//Hence the difference between the sum of the squares of the first ten natural numbers
+//and the square of the sum is 3025−385=2640.
+//
+//Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+func P6(l *logging.Logger) (uint64, error) {
+	pnum := 6
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	var (
+		sum_nat      float64 = 0
+		sum_sqrt_nat float64 = 0
+	)
+	for i := 1.0; i <= 100; i++ {
+		sum_sqrt_nat = sum_sqrt_nat + math.Pow(i, 2.0)
+		sum_nat = sum_nat + i
+	}
+	result := math.Abs(math.Pow(sum_nat, 2.0) - sum_sqrt_nat)
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
