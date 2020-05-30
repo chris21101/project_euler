@@ -167,3 +167,48 @@ func TestIs_Pallindrom(t *testing.T) {
 		t.Errorf("Error: euler_math.Is_Palindrom(9009) is a pallindrom")
 	}
 }
+
+func TestGet_Next_Prime(t *testing.T) {
+	start_num := 16.0
+	next_prime := 17.0
+	result := Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+	start_num = 25.0
+	next_prime = 29.0
+	result = Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+	start_num = 124.0
+	next_prime = 127.0
+	result = Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+	start_num = 2400.0
+	next_prime = 2411.0
+	result = Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+	start_num = 1.0
+	next_prime = 2.0
+	result = Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+	start_num = 2.0
+	next_prime = 3.0
+	result = Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+	start_num = 41.0
+	next_prime = 43.0
+	result = Get_Next_Prime(float64(start_num))
+	if result != next_prime {
+		t.Errorf("Error: euler_math.Get_Next_Prime(%.0f) = %.0f and not %.0f", start_num, result, next_prime)
+	}
+}

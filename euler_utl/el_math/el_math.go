@@ -96,3 +96,27 @@ func Get_Reverse_Num(num float64) float64 {
 func Is_Palindrom(num float64) bool {
 	return num == Get_Reverse_Num(num)
 }
+
+func Get_Next_Prime(start_num float64) float64 {
+	var (
+		next_num float64 = 0.0
+		result   float64 = 0.0
+		exit     bool    = false
+	)
+	if math.Mod(start_num, 2) == 0 || start_num == 1 {
+		next_num = start_num + 1
+	} else {
+		next_num = start_num + 2
+	}
+
+	for i := next_num; exit == false; {
+		if Is_Prime_Number(i) == true {
+			result = i
+			exit = true
+		}
+		result = i
+		i = i + 2
+	}
+
+	return result
+}

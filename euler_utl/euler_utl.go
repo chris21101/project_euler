@@ -3,11 +3,24 @@ package euler_utl
 import (
 	"fmt"
 	"math"
+	"strings"
 
 	"project_euler/euler_utl/el_math"
 	"project_euler/logging"
 )
 
+/*
+Template for functions
+func P[Num]l *logging.Logger) (uint64, error) {
+	pnum := [Num]
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	result := 1
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
+*/
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
 // The sum of these multiples is 23.
@@ -196,6 +209,27 @@ func P6(l *logging.Logger) (uint64, error) {
 		sum_nat = sum_nat + i
 	}
 	result := math.Abs(math.Pow(sum_nat, 2.0) - sum_sqrt_nat)
+
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+//
+//What is the 10001st prime number?`
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+func P7(l *logging.Logger) (uint64, error) {
+	pnum := 7
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	next_prime := 1.0
+	for count := 0; count < 10001; count++ {
+		next_prime = el_math.Get_Next_Prime(next_prime)
+		l.Log(logging.Info, fmt.Sprintf("%.0f", next_prime))
+	}
+	result := next_prime
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	return uint64(result), nil

@@ -113,6 +113,15 @@ Somit ist die Differenz aus der Summe der Quadrate der ersten zehn natürlichen 
 und dem Quadrat der Summe 3025 - 385 = 2640.
 
 Finden Sie die Differenz aus der Summe der Quadrate der ersten einhundert natürlichen Zahlen und dem Quadrat der Summe.`
+
+	//----------------------------- Problem 7 -------------------------------------------------------------------------------------------
+	map_of_text["7_EN"] = `By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+What is the 10 001st prime number?`
+	map_of_text["7_DE"] = `Wenn wir die ersten 6 Primzahlen auflisten: 2, 3, 5, 7, 11 und 13, können wir sehen, dass die 6. Primzahl 13 ist.
+
+Was ist die 10001. Primzahl?`
+
 	//----------------------------- Result Line -------------------------------------------------------------------------------------------
 	map_of_text["R_EN"] = "Result of the problem %d is %d"
 	map_of_text["R_DE"] = "Ergebnis des Problems %d ist %d"
