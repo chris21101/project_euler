@@ -13,9 +13,9 @@ import (
 	"project_euler/logging"
 )
 
-const version string = "v0.1.7"
+const version string = "v0.1.8"
 const project_name = "EulerGo"
-const max_problem_num = 7
+const max_problem_num = 8
 
 func main() {
 
@@ -72,6 +72,9 @@ func main() {
 		el_output.Print_Loc_Text(localizer, *numbPtr, result)
 	case 7:
 		result, _ := euler_utl.P7(logger)
+		el_output.Print_Loc_Text(localizer, *numbPtr, result)
+	case 8:
+		result, _ := euler_utl.P8(logger)
 		el_output.Print_Loc_Text(localizer, *numbPtr, result)
 	default:
 		logger.Log(logging.Error, fmt.Sprintf("%s %d %s", "Problem ", *numbPtr, " not yet implemented"))

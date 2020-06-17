@@ -3,7 +3,8 @@ package euler_utl
 import (
 	"fmt"
 	"math"
-	"strings"
+
+	//"strings"
 
 	"project_euler/euler_utl/el_math"
 	"project_euler/logging"
@@ -230,6 +231,16 @@ func P7(l *logging.Logger) (uint64, error) {
 		l.Log(logging.Info, fmt.Sprintf("%.0f", next_prime))
 	}
 	result := next_prime
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	return uint64(result), nil
+}
+
+func P8(l *logging.Logger) (uint64, error) {
+	pnum := 8
+	l.Log(logging.Info, fmt.Sprintf("%s %d", "Start with Problem ", pnum))
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	result := 1
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	return uint64(result), nil
